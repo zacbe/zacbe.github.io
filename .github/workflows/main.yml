@@ -28,6 +28,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
       - run: npm install -g gatsby-cli
-      - run: npm ci --ignore-script
+      - run: npm ci
       - run: npm run deploy
       - run: echo Deployment done 🚀!
