@@ -6,8 +6,9 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsby Contentful Starter',
     description: 'Official Contentful Gatsby Starter',
-    siteUrl: '',
+    siteUrl: 'https://www.zacbe.dev',
   },
+  pathPrefix: '/zacbe.github.io',
   plugins: [
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',

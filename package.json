@@ -15,7 +15,6 @@
     "gatsby-plugin-sharp": "^5.5.0",
     "gatsby-source-contentful": "^8.5.0",
     "gatsby-transformer-sharp": "^5.5.0",
-    "gh-pages": "^3.1.0",
     "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -25,6 +24,7 @@
   "devDependencies": {
     "contentful-import": "^8.3.2",
     "gatsby-provision-contentful": "^0.0.5",
+    "gh-pages": "^5.0.0",
     "netlify-cli": "^10.0.0"
   },
   "engines": {
@@ -43,6 +43,7 @@
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
