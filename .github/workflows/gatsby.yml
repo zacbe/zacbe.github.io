@@ -12,6 +12,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  repository_dispatch:
+    types:
+      - webhook
+
 env:
   NODE_ENV: production
   CONTENTFUL_SPACE_ID: ${{ vars.PROD_CONTENTFUL_SPACE_ID }}
