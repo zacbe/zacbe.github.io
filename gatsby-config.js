@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful Starter',
-    description: 'Official Contentful Gatsby Starter',
+    title: `Zacbe's Website`,
+    description: 'My personal website to share things I like',
     siteUrl: 'https://www.zacbe.dev',
   },
   pathPrefix: '/zacbe.github.io',
