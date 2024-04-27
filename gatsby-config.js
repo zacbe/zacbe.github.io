@@ -15,6 +15,19 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-image',
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Zacbe`,
+        short_name: `ZBē`,
+        start_url: `/`,
+        background_color: `#FFE8E1`,
+        theme_color: `#FFE8E1`,
+        display: `minimal-ui`,
+        icon: `static/favicon.ico`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
