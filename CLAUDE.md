@@ -20,7 +20,10 @@ Read `README.md` for commands, environment, content types and deployment.
 - `handoff/DESIGN.md`: tokens, components and behaviour. Source of truth for the UI. Its §3 is
   written as Markdown frontmatter; the equivalent Contentful types are in
   `contentful/migrations/001-create-content-model.cjs` (`gotcha` is a separate field instead of
-  an MDX component; site, uses and resume data are Contentful entries instead of `src/data/*.ts`).
+  an MDX component; site and uses data are Contentful entries instead of `src/data/*.ts`).
+- The **resume is one pasted Markdown document** plus a PDF in Contentful (`resumePage`). Zacbé
+  wants to only copy and paste it: don't add structured resume fields. `src/lib/resume.ts`
+  parses the Markdown's conventions; test it against `docs/Resume.md`.
 - `handoff/design/*.html`: static reference mockups, one per page.
 - Build pages in this order: Home → TIL archive and entry → Projects and write-up → Uses →
   Resume. Pages with a `TODO(design)` comment are still skeletons.

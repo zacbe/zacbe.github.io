@@ -96,31 +96,3 @@ export type UsesPage = {
   favoriteCommand?: string
   favoriteCommandNote?: string
 }
-
-export type ResumeRole = {
-  role: string
-  company: string
-  startYear: number
-  /** Undefined means the role is current. */
-  endYear?: number
-  team?: string
-  bullets: string[]
-  stack: string[]
-}
-
-export type SkillGroup = {
-  name: string
-  skills: string[]
-}
-
-export type Resume = {
-  summary: string
-  roles: ResumeRole[]
-  skillGroups: SkillGroup[]
-  education?: { degree?: string; school?: string; year?: number }
-  languages: { name: string; level: string }[]
-  /** Absolute URL of the PDF on Contentful's CDN. The build copies it to /zacbe-resume.pdf. */
-  pdfUrl: string
-  pdfPageCount: number
-  updated: string
-}

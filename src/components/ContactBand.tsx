@@ -1,3 +1,4 @@
+import { ExternalLink } from '@/components/ExternalLink'
 import type { SiteSettings } from '@/lib/types'
 import styles from './ContactBand.module.css'
 
@@ -25,16 +26,16 @@ export function ContactBand({ site }: { site: SiteSettings }) {
           </li>
           {site.githubUrl && (
             <li>
-              <a className={`btn ${styles.secondary}`} href={site.githubUrl} rel="me">
+              <ExternalLink className={`btn ${styles.secondary}`} href={site.githubUrl} rel="me">
                 GitHub
-              </a>
+              </ExternalLink>
             </li>
           )}
           {site.linkedinUrl && (
             <li>
-              <a className={`btn ${styles.secondary}`} href={site.linkedinUrl} rel="me">
+              <ExternalLink className={`btn ${styles.secondary}`} href={site.linkedinUrl} rel="me">
                 LinkedIn
-              </a>
+              </ExternalLink>
             </li>
           )}
         </ul>

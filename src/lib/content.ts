@@ -6,6 +6,7 @@
 //   CONTENTFUL_PREVIEW_TOKEN  optional, used by `npm run dev` to show drafts
 //   CONTENTFUL_ENVIRONMENT    optional, defaults to "master"
 import { cache } from 'react'
+import { PDFDocument } from 'pdf-lib'
 import {
   createClient,
   type Asset,
@@ -19,7 +20,6 @@ import type {
   Link,
   Project,
   ProjectStatus,
-  Resume,
   SiteSettings,
   Til,
   UsesPage,
@@ -115,40 +115,9 @@ type UsesPageSkeleton = EntrySkeletonType<
   'usesPage'
 >
 
-type ResumeRoleSkeleton = EntrySkeletonType<
-  {
-    internalName: EntryFieldTypes.Symbol
-    role: EntryFieldTypes.Symbol
-    company: EntryFieldTypes.Symbol
-    startYear: EntryFieldTypes.Integer
-    endYear?: EntryFieldTypes.Integer
-    team?: EntryFieldTypes.Symbol
-    bullets?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
-    stack?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
-  },
-  'resumeRole'
->
-
-type SkillGroupSkeleton = EntrySkeletonType<
-  { name: EntryFieldTypes.Symbol; skills?: EntryFieldTypes.Array<EntryFieldTypes.Symbol> },
-  'skillGroup'
->
-
-type ResumeSkeleton = EntrySkeletonType<
-  {
-    internalName: EntryFieldTypes.Symbol
-    summary: EntryFieldTypes.Text
-    roles?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<ResumeRoleSkeleton>>
-    skillGroups?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<SkillGroupSkeleton>>
-    educationDegree?: EntryFieldTypes.Symbol
-    educationSchool?: EntryFieldTypes.Symbol
-    educationYear?: EntryFieldTypes.Integer
-    spokenLanguages?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
-    pdf: EntryFieldTypes.AssetLink
-    pdfPageCount: EntryFieldTypes.Integer
-    updated: EntryFieldTypes.Date
-  },
-  'resume'
+type ResumePageSkeleton = EntrySkeletonType<
+  { title: EntryFieldTypes.Symbol; body: EntryFieldTypes.Text; pdf: EntryFieldTypes.AssetLink },
+  'resumePage'
 >
 
 type Resolved<S extends EntrySkeletonType> = Entry<S, 'WITHOUT_UNRESOLVABLE_LINKS'>
@@ -371,34 +340,24 @@ export const getUsesPage = cache(async (): Promise<UsesPage> => {
   }
 })
 
-export const getResume = cache(async (): Promise<Resume> => {
-  const f = (await getSingleton<ResumeSkeleton>('resume', 'Resume')).fields
-  const pdfUrl = f.pdf?.fields.file?.url
+/** The resume: pasted Markdown plus the PDF. `updated` is when the entry was last published. */
+export const getResumePage = cache(async () => {
+  const entry = await getSingleton<ResumePageSkeleton>('resumePage', 'Resume')
+  const pdfUrl = entry.fields.pdf?.fields.file?.url
   if (!pdfUrl) throw new Error('The Resume entry has no published PDF asset.')
   return {
-    summary: f.summary,
-    roles: (f.roles ?? []).filter(present).map(({ fields: r }) => ({
-      role: r.role,
-      company: r.company,
-      startYear: r.startYear,
-      endYear: r.endYear,
-      team: r.team,
-      bullets: r.bullets ?? [],
-      stack: r.stack ?? [],
-    })),
-    skillGroups: (f.skillGroups ?? [])
-      .filter(present)
-      .map((g) => ({ name: g.fields.name, skills: g.fields.skills ?? [] })),
-    education:
-      f.educationDegree || f.educationSchool
-        ? { degree: f.educationDegree, school: f.educationSchool, year: f.educationYear }
-        : undefined,
-    languages: (f.spokenLanguages ?? []).map((value) => {
-      const [name = value, level = ''] = value.split(/:\s*/, 2)
-      return { name, level }
-    }),
+    markdown: entry.fields.body,
     pdfUrl: `https:${pdfUrl}`,
-    pdfPageCount: f.pdfPageCount,
-    updated: day(f.updated),
+    updated: day(entry.sys.updatedAt),
   }
+})
+
+/** Downloads the resume PDF (at build time) and counts its pages. */
+export const getResumePdf = cache(async () => {
+  const { pdfUrl } = await getResumePage()
+  const response = await fetch(pdfUrl)
+  if (!response.ok) throw new Error(`Couldn't download the resume PDF: HTTP ${response.status}`)
+  const bytes = new Uint8Array(await response.arrayBuffer())
+  const pdf = await PDFDocument.load(bytes, { updateMetadata: false })
+  return { bytes, pages: pdf.getPageCount() }
 })

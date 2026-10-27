@@ -41,7 +41,7 @@ edit one that has already run.
 | `siteSettings` (one entry) | name, role, contact links, `openToWork` status pill, Now box, `nextUp` ideas |
 | `idea` | “next up” cards on `/projects` |
 | `usesPage` (one entry) → `usesGroup` → `usesItem` | `/uses` |
-| `resume` (one entry) → `resumeRole`, `skillGroup` | `/resume` and `/zacbe-resume.pdf` |
+| `resumePage` (one entry): pasted Markdown + PDF | `/resume` and `/zacbe-resume.pdf` |
 
 TIL and project bodies are **Markdown**. Fenced code blocks are highlighted with Shiki at build
 time. Raw HTML in Markdown is dropped.
@@ -52,8 +52,11 @@ time. Raw HTML in Markdown is dropped.
   optional gotcha, project and sources) and publish it.
 - **Add a project:** create a *Project* entry, optionally with a cover image, and publish it.
 - **Update Now, status or links:** edit the *Site settings* entry.
-- **Update the resume:** edit the *Resume* entry and replace its PDF asset. The build copies the
-  PDF to `/zacbe-resume.pdf`.
+- **Update the resume:** in the *Resume* entry, paste the whole resume Markdown into the body,
+  replace the PDF, and publish. The page count and "updated" date are worked out automatically.
+  `src/lib/resume.ts` maps the Markdown onto the layout (`# Company, Location`,
+  `**Role | Start - End**`, bullets, `**Stack:** a • b`, an Education/Languages table and a
+  `Keywords:` line); anything else is still shown, as plain text.
 
 Publishing or unpublishing in Contentful triggers a rebuild (see Deployment), and the site
 updates in about two minutes.
@@ -85,6 +88,7 @@ src/app/                 routes (App Router)
 src/components/          UI components (CSS modules)
 src/lib/content.ts       the only module that talks to Contentful
 src/lib/markdown.ts      Markdown → HTML (Shiki)
+src/lib/resume.ts        resume Markdown → layout
 src/app/globals.css      design tokens and base styles
 handoff/                 design brief and reference mockups
 ```
