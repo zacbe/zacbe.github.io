@@ -122,7 +122,8 @@ kbd {
 
 .container {
   width: 100%;
-  max-width: var(--container);
+  /* The mockups' max-width is the content width; padding sits outside it. */
+  max-width: calc(var(--container) + 2 * var(--gutter));
   margin-inline: auto;
   padding-inline: var(--gutter);
 }

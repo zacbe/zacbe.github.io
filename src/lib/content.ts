@@ -76,6 +76,7 @@ type SiteSettingsSkeleton = EntrySkeletonType<
     name: EntryFieldTypes.Symbol
     role: EntryFieldTypes.Symbol
     location?: EntryFieldTypes.Symbol
+    focus?: EntryFieldTypes.Symbol
     openToWork: EntryFieldTypes.Boolean
     email: EntryFieldTypes.Symbol
     githubUrl?: EntryFieldTypes.Symbol
@@ -337,6 +338,7 @@ export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
     name: f.name,
     role: f.role,
     location: f.location,
+    focus: f.focus,
     openToWork: f.openToWork,
     email: f.email,
     githubUrl: f.githubUrl,

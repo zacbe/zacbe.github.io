@@ -1,0 +1,47 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  align-items: end;
+  gap: 56px;
+  padding-top: 72px;
+  padding-bottom: 64px;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+}
+
+.intro {
+  max-width: 560px;
+  margin-bottom: 28px;
+  font-size: 20px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section {
+  padding-block: 56px;
+}
+
+.projects {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+}
+
+.empty {
+  padding: 20px 0;
+  border-block: 1px solid var(--divider);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}

@@ -63,6 +63,8 @@ export type SiteSettings = {
   name: string
   role: string
   location?: string
+  /** Completes the home intro: "I build {focus} by day". */
+  focus?: string
   openToWork: boolean
   email: string
   githubUrl?: string
