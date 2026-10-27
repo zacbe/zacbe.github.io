@@ -1,0 +1,262 @@
+.top {
+  padding-top: 48px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-bottom: 20px;
+  color: var(--accent-ink);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.title {
+  max-width: 900px;
+  margin-bottom: 20px;
+  overflow-wrap: break-word;
+}
+
+.lead {
+  max-width: 720px;
+  margin-bottom: 40px;
+  font-size: clamp(19px, 2.2vw, 22px);
+  color: var(--text-2);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  margin: 0 0 40px;
+  border-block: 1px solid var(--divider);
+}
+
+.facts > div {
+  padding: 20px 16px 20px 0;
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.facts dd {
+  font-size: 16px;
+}
+
+.facts a {
+  display: inline-block;
+  min-height: 24px;
+  color: var(--accent-ink);
+}
+
+.hero {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  border-radius: var(--radius-hero);
+  background: var(--chip);
+}
+
+.bottom {
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+
+/* --- write-up body: sections keyed by their ## heading (see src/lib/writeup.ts) --- */
+
+.writeup :global(section) + :global(section) {
+  margin-top: 48px;
+}
+
+.writeup :global(h2) {
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.writeup :global(figure.image) {
+  margin-block: 24px 0;
+}
+
+.writeup :global(figure.image img) {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.writeup :global(figure.image figcaption) {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* "What was hard": numbered 01, 02… in accent mono, problem on its own line. */
+.writeup :global([data-section='what-was-hard'] h2 + ol) {
+  margin-top: 20px;
+}
+
+.writeup :global([data-section='what-was-hard'] ol) {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: hard;
+}
+
+.writeup :global([data-section='what-was-hard'] ol > li) {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  counter-increment: hard;
+}
+
+.writeup :global([data-section='what-was-hard'] ol > li::before) {
+  content: counter(hard, decimal-leading-zero);
+  flex: 0 0 auto;
+  padding-top: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--accent);
+}
+
+.writeup :global([data-section='what-was-hard'] ol > li > div > strong:first-child),
+.writeup :global([data-section='what-was-hard'] ol > li > div > p > strong:first-child) {
+  display: block;
+  font-weight: 500;
+}
+
+/* "What I'd do differently": dark box. */
+.writeup :global([data-section='what-id-do-differently']) {
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: var(--ink);
+  color: var(--code-text);
+}
+
+.writeup :global([data-section='what-id-do-differently'] h2) {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.writeup :global([data-section='what-id-do-differently'] h2 + *) {
+  margin-top: 16px;
+}
+
+.writeup :global([data-section='what-id-do-differently'] a) {
+  color: var(--mint);
+}
+
+.writeup :global([data-section='what-id-do-differently'] :focus-visible) {
+  outline-color: var(--mint);
+}
+
+.writeup :global([data-section='what-id-do-differently'] li + li) {
+  margin-top: 8px;
+}
+
+/* --- after the write-up --- */
+
+.tils {
+  margin-top: 56px;
+}
+
+.tils h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tils ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--divider);
+}
+
+.tils li {
+  border-bottom: 1px solid var(--divider);
+}
+
+.tils a {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  padding: 16px 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.tils time {
+  flex: 0 0 110px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.tils a span {
+  flex: 1 1 300px;
+  font-weight: 500;
+}
+
+.tils a:hover span {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pager {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--divider);
+}
+
+.prev,
+.next {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.next {
+  text-align: right;
+}
+
+.pagerLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.pagerTitle {
+  display: block;
+  font-weight: 500;
+}
+
+.prev:hover .pagerTitle,
+.next:hover .pagerTitle {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

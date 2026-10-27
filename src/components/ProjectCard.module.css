@@ -66,3 +66,8 @@
   font-size: 13px;
   color: var(--muted);
 }
+
+/* /projects grid: slightly tighter, no image. */
+.grid {
+  gap: 12px;
+}

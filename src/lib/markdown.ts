@@ -9,19 +9,29 @@ import rehypeStringify from 'rehype-stringify'
 import { rehypeCodeFigure } from './code-figure'
 import { rehypeExternalLinks } from './external-links'
 import { zacbeTheme } from './shiki-theme'
+import { rehypeFigures, rehypeSections } from './writeup'
 import readingTime from 'reading-time'
 
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkGfm)
-  .use(remarkRehype)
-  .use(rehypeCodeFigure)
-  .use(rehypeShiki, { theme: zacbeTheme, defaultLanguage: 'text', fallbackLanguage: 'text' })
-  .use(rehypeExternalLinks)
-  .use(rehypeStringify)
+const base = () =>
+  unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeFigures)
+    .use(rehypeCodeFigure)
+    .use(rehypeShiki, { theme: zacbeTheme, defaultLanguage: 'text', fallbackLanguage: 'text' })
+    .use(rehypeExternalLinks)
+
+const processor = base().use(rehypeStringify)
+const writeUpProcessor = base().use(rehypeSections).use(rehypeStringify)
 
 export async function renderMarkdown(markdown: string): Promise<string> {
   return String(await processor.process(markdown))
+}
+
+/** Project write-ups: like renderMarkdown, plus one <section data-section> per `##` heading. */
+export async function renderWriteUp(markdown: string): Promise<string> {
+  return String(await writeUpProcessor.process(markdown))
 }
 
 /** "3 min read" */

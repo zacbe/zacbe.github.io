@@ -53,6 +53,10 @@ time. Raw HTML in Markdown is dropped.
   The body's first paragraph is shown as the lead. For a code block with a filename caption,
   write the fence as ```` ```ts title="retry.ts" ```` (the language alone also works).
 - **Add a project:** create a *Project* entry, optionally with a cover image, and publish it.
+  The write-up body uses `##` sections; "What was hard" (a numbered list, each item starting
+  with **the problem**) and "What I'd do differently" get special styling. An image with a
+  title, `![Diagram](url "Caption")`, becomes a captioned figure. The top project on
+  /projects is the most recently updated one marked *Featured*.
 - **Update Now, status or links:** edit the *Site settings* entry.
 - **Update the resume:** in the *Resume* entry, paste the whole resume Markdown into the body,
   replace the PDF, and publish. The page count and "updated" date are worked out automatically.

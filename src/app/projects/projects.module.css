@@ -1,0 +1,23 @@
+.page {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.lead {
+  max-width: 640px;
+  margin-bottom: 40px;
+  font-size: 19px;
+  color: var(--text-2);
+}
+
+.empty {
+  padding: 20px 0;
+  border-block: 1px solid var(--divider);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}

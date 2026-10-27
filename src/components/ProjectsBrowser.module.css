@@ -1,0 +1,86 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.filters[hidden] {
+  display: none;
+}
+
+.filters button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  border-color: var(--ink);
+}
+
+.filters button[aria-pressed='true'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+}
+
+.status {
+  margin: -24px 0 24px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+}
+
+.idea {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border: 1px dashed var(--input-border);
+  border-radius: var(--radius-card);
+}
+
+.ideaLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ideaTitle {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.ideaWhy {
+  color: var(--text-3);
+}
+
+.empty {
+  color: var(--text-3);
+}
+
+.reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent-ink);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

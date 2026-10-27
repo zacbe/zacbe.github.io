@@ -66,6 +66,11 @@ export type Project = {
   body: string
 }
 
+/** What a project card needs (no body). Small enough to pass to client components. */
+export type ProjectSummary = Omit<Project, 'body'>
+
+export const toProjectSummary = ({ body: _body, ...summary }: Project): ProjectSummary => summary
+
 export type Idea = {
   title: string
   why: string
