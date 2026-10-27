@@ -35,6 +35,18 @@ export type Til = {
   sources: Link[]
 }
 
+/** What a TIL list row needs. Small enough to pass to client components. */
+export type TilSummary = Pick<Til, 'slug' | 'title' | 'date' | 'tags' | 'summary' | 'project'>
+
+export const toTilSummary = ({ slug, title, date, tags, summary, project }: Til): TilSummary => ({
+  slug,
+  title,
+  date,
+  tags,
+  summary,
+  project,
+})
+
 export type Project = {
   slug: string
   title: string

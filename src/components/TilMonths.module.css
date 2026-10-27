@@ -1,0 +1,11 @@
+.month {
+  padding-top: 40px;
+}
+
+.heading {
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+}

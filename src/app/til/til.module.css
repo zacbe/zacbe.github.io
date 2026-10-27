@@ -1,0 +1,39 @@
+/* Shared by /til and /til/tags/[tag]. */
+.page {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.lead {
+  max-width: 620px;
+  margin-bottom: 40px;
+  font-size: 19px;
+  color: var(--text-2);
+}
+
+.back {
+  color: var(--accent-ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.rule {
+  border-bottom: 1px solid var(--divider);
+}
+
+.empty {
+  padding: 20px 0;
+  border-block: 1px solid var(--divider);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}

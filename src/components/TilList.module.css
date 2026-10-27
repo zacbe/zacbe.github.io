@@ -54,3 +54,24 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* Archive variant (/til): lighter rules inside month groups, day-only date column. */
+.archive {
+  border-top: 0;
+}
+
+.archive .item {
+  border-bottom-color: var(--border);
+}
+
+.archive .row {
+  gap: 4px 28px;
+}
+
+.archive .date {
+  flex-basis: 64px;
+}
+
+.archive .main {
+  gap: 0;
+}

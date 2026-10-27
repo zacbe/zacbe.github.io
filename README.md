@@ -50,6 +50,8 @@ time. Raw HTML in Markdown is dropped.
 
 - **Add a TIL:** in Contentful, create a *TIL* entry (title, slug, date, tags, summary, body,
   optional gotcha, project and sources) and publish it.
+  The body's first paragraph is shown as the lead. For a code block with a filename caption,
+  write the fence as ```` ```ts title="retry.ts" ```` (the language alone also works).
 - **Add a project:** create a *Project* entry, optionally with a cover image, and publish it.
 - **Update Now, status or links:** edit the *Site settings* entry.
 - **Update the resume:** in the *Resume* entry, paste the whole resume Markdown into the body,

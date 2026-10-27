@@ -1,0 +1,148 @@
+.page {
+  padding-top: 48px;
+  padding-bottom: 96px;
+}
+
+.back {
+  color: var(--accent-ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.tag {
+  color: var(--ink);
+}
+
+.tag:hover {
+  color: var(--accent-ink);
+}
+
+.title {
+  margin-bottom: 28px;
+  font-size: var(--fs-article-h1);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.gotcha {
+  margin-top: 24px;
+}
+
+.sources {
+  margin-top: 40px;
+}
+
+.sources h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sources ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.sources li + li {
+  margin-top: 6px;
+}
+
+.sources a {
+  color: var(--accent-ink);
+  overflow-wrap: anywhere;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.project:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.projectLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.projectName {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.projectCta {
+  font-weight: 500;
+  color: var(--accent-ink);
+}
+
+.pager {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--divider);
+}
+
+.prev,
+.next {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.next {
+  text-align: right;
+}
+
+.pagerLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.pagerTitle {
+  display: block;
+  font-weight: 500;
+}
+
+.prev:hover .pagerTitle,
+.next:hover .pagerTitle {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

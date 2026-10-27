@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Kicker } from '@/components/Kicker'
 import { notFound } from 'next/navigation'
+import { Kicker } from '@/components/Kicker'
+import { TilMonths } from '@/components/TilMonths'
 import { getTags, getTils } from '@/lib/content'
 import { staticParams } from '@/lib/static-params'
-import { formatDay } from '@/lib/format'
+import { toTilSummary } from '@/lib/types'
+import styles from '../../til.module.css'
 
 type Props = { params: Promise<{ tag: string }> }
 
@@ -19,27 +21,30 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tag } = await params
-  return { title: `TIL #${tag}`, description: `Things I learned about ${tag}.` }
+  return {
+    title: `TIL #${tag}`,
+    description: `Things I learned about ${tag}.`,
+    alternates: { canonical: `/til/tags/${tag}/` },
+  }
 }
 
-// TODO(design): reuse the TIL archive list once it is built.
 export default async function TilTagPage({ params }: Props) {
   const { tag } = await params
   const tils = (await getTils()).filter((t) => t.tags.includes(tag))
   if (tils.length === 0) notFound()
 
   return (
-    <div className="container section">
+    <div className={`container ${styles.page}`}>
+      <Link href="/til/" className={styles.back}>
+        ← All TILs
+      </Link>
       <Kicker command={`ls ./til | grep ${tag}`} />
-      <h1 className="page-title">#{tag}</h1>
-      <ul>
-        {tils.map((til) => (
-          <li key={til.slug}>
-            <span className="mono-meta">{formatDay(til.date)}</span>{' '}
-            <Link href={`/til/${til.slug}/`}>{til.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <h1 className={`page-title ${styles.title}`}>#{tag}</h1>
+      <p className={styles.lead}>
+        {tils.length} {tils.length === 1 ? 'entry' : 'entries'} tagged “{tag}”.
+      </p>
+      <div className={styles.rule} />
+      <TilMonths tils={tils.map(toTilSummary)} />
     </div>
   )
 }

@@ -6,16 +6,17 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import rehypeShiki from '@shikijs/rehype'
 import rehypeStringify from 'rehype-stringify'
+import { rehypeCodeFigure } from './code-figure'
 import { rehypeExternalLinks } from './external-links'
+import { zacbeTheme } from './shiki-theme'
 import readingTime from 'reading-time'
 
 const processor = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkRehype)
-  // TODO(design): caption bar with filename + language (DESIGN.md §2 "Code block"), and a
-  // theme tuned to the mockup colours. The background is overridden to --code-bg in CSS.
-  .use(rehypeShiki, { theme: 'github-dark-default', defaultLanguage: 'text' })
+  .use(rehypeCodeFigure)
+  .use(rehypeShiki, { theme: zacbeTheme, defaultLanguage: 'text', fallbackLanguage: 'text' })
   .use(rehypeExternalLinks)
   .use(rehypeStringify)
 
