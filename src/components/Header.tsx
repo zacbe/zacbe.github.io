@@ -12,27 +12,29 @@ export function Header() {
   const pathname = usePathname()
 
   return (
-    <header className={`container ${styles.header}`}>
-      <Logo />
-      <nav aria-label="Main">
-        <ul className={styles.links}>
-          {NAV_LINKS.map(({ href, label }) => {
-            const current = pathname === href || pathname.startsWith(href)
-            const isResume = href === '/resume/'
-            return (
-              <li key={href}>
-                <Link
-                  href={href}
-                  aria-current={current ? 'page' : undefined}
-                  className={isResume ? styles.pill : styles.link}
-                >
-                  {label}
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
+    <header className={styles.bar}>
+      <div className={`container ${styles.header}`}>
+        <Logo />
+        <nav aria-label="Main">
+          <ul className={styles.links}>
+            {NAV_LINKS.map(({ href, label }) => {
+              const current = pathname === href || pathname.startsWith(href)
+              const isResume = href === '/resume/'
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    aria-current={current ? 'page' : undefined}
+                    className={isResume ? styles.pill : styles.link}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }

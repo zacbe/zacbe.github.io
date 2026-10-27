@@ -1,3 +1,41 @@
+/* Full-width bar. Scrolls with the page on phones; sticks to the top from 768px up, where the
+   nav fits on one row. */
+.bar {
+  background: var(--bg);
+}
+
+@media (min-width: 768px) {
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid transparent;
+  }
+
+  /* Show the divider only once the page has scrolled (CSS scroll-driven animation; browsers
+     without support simply never show it). */
+  @supports (animation-timeline: scroll()) {
+    .bar {
+      animation: reveal-divider linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 24px;
+    }
+
+    /* Tied to scroll position, not time, so it is not motion; keep it under reduced motion. */
+    @media (prefers-reduced-motion: reduce) {
+      .bar {
+        animation-duration: auto !important;
+      }
+    }
+  }
+}
+
+@keyframes reveal-divider {
+  to {
+    border-bottom-color: var(--divider);
+  }
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
