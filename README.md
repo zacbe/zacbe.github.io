@@ -58,6 +58,9 @@ time. Raw HTML in Markdown is dropped.
   title, `![Diagram](url "Caption")`, becomes a captioned figure. The top project on
   /projects is the most recently updated one marked *Featured*.
 - **Update Now, status or links:** edit the *Site settings* entry.
+- **Update /uses:** edit the *Uses page* entry. Add *Uses: group* entries (shown in the order
+  listed) with *Uses: item* entries inside; publish the groups and items too. Groups with no
+  items are hidden. The favourite command appears under the first group.
 - **Update the resume:** in the *Resume* entry, paste the whole resume Markdown into the body,
   replace the PDF, and publish. The page count and "updated" date are worked out automatically.
   `src/lib/resume.ts` maps the Markdown onto the layout (`# Company, Location`,

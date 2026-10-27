@@ -25,8 +25,7 @@ Read `README.md` for commands, environment, content types and deployment.
   wants to only copy and paste it: don't add structured resume fields. `src/lib/resume.ts`
   parses the Markdown's conventions; test it against `docs/Resume.md`.
 - `handoff/design/*.html`: static reference mockups, one per page.
-- Build pages in this order: Home → TIL archive and entry → Projects and write-up → Uses →
-  Resume. Pages with a `TODO(design)` comment are still skeletons.
+- All pages are built from the mockups. Check changes against them at 375, 768 and 1280px.
 
 ## Rules
 
