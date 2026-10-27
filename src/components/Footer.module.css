@@ -1,0 +1,35 @@
+.footer {
+  background: var(--ink);
+  border-top: 1px solid var(--dark-border);
+  color: var(--dark-muted);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 24px;
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--dark-link);
+}
+
+.links a:hover {
+  color: #fff;
+}

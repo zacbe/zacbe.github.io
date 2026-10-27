@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zacbé — Project write-up</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Fira+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0B6B52}a:hover{color:#121417}
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #FAFAF9; color: #121417; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 18px; line-height: 1.7">
+<header style="max-width: 1120px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="text-decoration: none; color: #121417; font-family: Menlo, 'Fira Mono', ui-monospace, monospace; font-size: 22px"><span style="color: #0B7A5C">&gt;</span> ZBē</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 16px; font-weight: 500">
+<a href="#til" style="color: #121417; text-decoration: none">TIL</a>
+<a href="#projects" aria-current="page" style="color: #121417; text-decoration: underline; text-decoration-color: #0B7A5C; text-decoration-thickness: 2px; text-underline-offset: 6px">Projects</a>
+<a href="#uses" style="color: #121417; text-decoration: none">Uses</a>
+<a href="#resume" style="display: inline-block; padding: 9px 18px; border-radius: 999px; border: 1.5px solid #121417; color: #121417; text-decoration: none">Resume</a>
+</nav>
+</header>
+<main id="top">
+<div style="max-width: 1120px; margin: 0 auto; padding: 48px 24px 0">
+<a href="#projects" style="display: inline-block; margin-bottom: 32px; font-size: 15px; font-weight: 500; text-decoration: none">← All projects</a>
+<p style="margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 10px; font-family: 'Fira Mono', monospace; font-size: 14px"><span style="padding: 2px 10px; border-radius: 999px; background: #E7F3EF; color: #0B6B52">● in progress</span><span style="color: #5A5F67">started [MMM YYYY] · updated [MMM YYYY]</span></p>
+<h1 style="margin: 0 0 20px; max-width: 900px; font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: -0.04em; line-height: 1">[Project name]</h1>
+<p style="margin: 0 0 40px; max-width: 720px; font-size: 22px; color: #3A3F47">[One or two sentences: what it is and the question you wanted to answer by building it.]</p>
+<dl style="margin: 0 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 1px solid #D9DAD6; border-bottom: 1px solid #D9DAD6">
+<div style="padding: 20px 0"><dt style="font-family: 'Fira Mono', monospace; font-size: 13px; color: #5A5F67">stack</dt><dd style="margin: 0; font-size: 16px">[tech] · [tech] · [tech]</dd></div>
+<div style="padding: 20px 0"><dt style="font-family: 'Fira Mono', monospace; font-size: 13px; color: #5A5F67">time spent</dt><dd style="margin: 0; font-size: 16px">[e.g. 4 weekends]</dd></div>
+<div style="padding: 20px 0"><dt style="font-family: 'Fira Mono', monospace; font-size: 13px; color: #5A5F67">links</dt><dd style="margin: 0; font-size: 16px"><a href="#code">Code ↗</a> · <a href="#demo">Demo ↗</a></dd></div>
+</dl>
+<div style="aspect-ratio: 16 / 7; margin-bottom: 64px; border-radius: 20px; background: #EEEFEC; display: flex; align-items: center; justify-content: center; font-family: 'Fira Mono', monospace; font-size: 15px; color: #5A5F67">[hero: screenshot or architecture overview]</div>
+</div>
+<article style="max-width: 760px; margin: 0 auto; padding: 0 24px">
+<h2 style="margin: 0 0 12px; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Why I built it</h2>
+<p style="margin: 0 0 48px">[The itch you were scratching or the thing you wanted to understand.]</p>
+<h2 style="margin: 0 0 12px; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">How it works</h2>
+<p style="margin: 0 0 24px">[A short tour of the architecture: the main pieces and how data flows between them.]</p>
+<figure style="margin: 0 0 48px">
+<div style="aspect-ratio: 16 / 9; border-radius: 14px; border: 1px solid #E3E4E1; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[diagram: client → service → queue → worker → db]</div>
+<figcaption style="margin-top: 10px; font-size: 15px; color: #5A5F67">[Caption describing the diagram.]</figcaption>
+</figure>
+<h2 style="margin: 0 0 20px; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">What was hard</h2>
+<ol style="margin: 0 0 48px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 24px">
+<li style="display: flex; gap: 20px"><span style="flex: 0 0 auto; font-family: 'Fira Mono', monospace; font-size: 15px; color: #0B7A5C">01</span><span><strong style="display: block; font-weight: 500">[The problem you hit]</strong>[How you worked through it.]</span></li>
+<li style="display: flex; gap: 20px"><span style="flex: 0 0 auto; font-family: 'Fira Mono', monospace; font-size: 15px; color: #0B7A5C">02</span><span><strong style="display: block; font-weight: 500">[Another problem]</strong>[How you worked through it.]</span></li>
+</ol>
+<div style="margin: 0 0 56px; padding: 28px; border-radius: 16px; background: #121417; color: #E6E9E6">
+<h2 style="margin: 0 0 16px; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: #FFFFFF">What I'd do differently</h2>
+<ul style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px">
+<li>[A decision you'd change, and why]</li>
+<li>[Something you'd simplify or skip]</li>
+<li>[What you'd try next time]</li>
+</ul>
+</div>
+<section aria-labelledby="tils-h" style="margin-bottom: 56px">
+<h2 id="tils-h" style="margin: 0 0 8px; font-size: 24px; font-weight: 700; letter-spacing: -0.01em">TILs from this project</h2>
+<ol style="margin: 0; padding: 0; list-style: none; border-top: 1px solid #D9DAD6">
+<li style="border-bottom: 1px solid #D9DAD6"><a href="#til" style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; color: #121417; text-decoration: none"><time style="flex: 0 0 110px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[YYYY-MM-DD]</time><span style="flex: 1 1 300px; font-weight: 500">[TIL title]</span></a></li>
+<li style="border-bottom: 1px solid #D9DAD6"><a href="#til" style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; color: #121417; text-decoration: none"><time style="flex: 0 0 110px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[YYYY-MM-DD]</time><span style="flex: 1 1 300px; font-weight: 500">[TIL title]</span></a></li>
+<li style="border-bottom: 1px solid #D9DAD6"><a href="#til" style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 16px 0; color: #121417; text-decoration: none"><time style="flex: 0 0 110px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[YYYY-MM-DD]</time><span style="flex: 1 1 300px; font-weight: 500">[TIL title]</span></a></li>
+</ol>
+</section>
+<nav aria-label="More projects" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; padding: 32px 0 96px; border-top: 1px solid #D9DAD6">
+<a href="#prev" style="display: block; color: #121417; text-decoration: none"><span style="display: block; font-family: 'Fira Mono', monospace; font-size: 13px; color: #5A5F67">← previous project</span><span style="display: block; font-weight: 500">[Project name]</span></a>
+<a href="#next" style="display: block; text-align: right; color: #121417; text-decoration: none"><span style="display: block; font-family: 'Fira Mono', monospace; font-size: 13px; color: #5A5F67">next project →</span><span style="display: block; font-weight: 500">[Project name]</span></a>
+</nav>
+</article>
+</main>
+<footer style="background: #121417; color: #9AA09B">
+<div style="max-width: 1120px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<span>© [year] Zacbé</span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 20px"><a href="#til" style="color: #C9CCC8">TIL</a><a href="#projects" style="color: #C9CCC8">Projects</a><a href="#uses" style="color: #C9CCC8">Uses</a><a href="#resume" style="color: #C9CCC8">Resume</a></nav>
+</div>
+</footer>
+</div>
+</body>
+</html>

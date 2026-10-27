@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZBē Terminal prompt</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#8FA394}a:hover{color:#FFFFFF}
+@keyframes zbeblink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.zbe-cursor{animation:zbeblink 1.1s steps(1) infinite}
+</style>
+</head>
+<body>
+<div style="width: 560px; height: 560px; box-sizing: border-box; background: #0B0F0C; font-family: Menlo, 'DejaVu Sans Mono', 'Fira Mono', ui-monospace, monospace; display: flex; flex-direction: column">
+<div style="flex: 1; display: flex; align-items: center; justify-content: center">
+<div style="display: flex; align-items: center; gap: 22px; line-height: 1">
+<span style="font-size: 72px; font-weight: 400; color: #4ADE80">&gt;</span>
+<span style="font-size: 132px; font-weight: 400;color: #EAF2EC">ZBē</span>
+<span class="zbe-cursor" style="display: inline-block; width: 52px; height: 104px; background: #4ADE80"></span>
+</div>
+</div>
+<div style="height: 128px; box-sizing: border-box; border-top: 1px solid #1F2A22; display: flex; align-items: center; justify-content: center; gap: 24px">
+<div style="width: 80px; height: 80px; border-radius: 50%; background: #131A15; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 24px; font-weight: 400; color: #EAF2EC"><span style="color: #4ADE80; font-weight: 400">&gt;</span>ZBē</div>
+<div style="width: 40px; height: 40px; border-radius: 10px; background: #4ADE80; display: flex; align-items: center; justify-content: center; gap: 2px; font-size: 18px; font-weight: 400; color: #0B0F0C">&gt;<span style="display: inline-block; width: 8px; height: 16px; background: #0B0F0C"></span></div>
+<div style="font-size: 18px; color: #8FA394">~/zacbé $</div>
+</div>
+</div>
+</body>
+</html>

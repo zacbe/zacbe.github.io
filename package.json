@@ -1,53 +1,42 @@
 {
-  "name": "zacbe.github.io",
-  "description": "Zacbe's Blog",
+  "name": "zacbe.dev",
+  "description": "Zacbé's personal site: TILs and weekend projects",
   "private": true,
-  "version": "0.0.1",
-  "author": "Contentful <opensource@contentful.com>",
-  "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
-  },
-  "dependencies": {
-    "@contentful/rich-text-plain-text-renderer": "^15.12.1",
-    "gatsby": "^5.13.4",
-    "gatsby-plugin-image": "^3.5.0",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-react-helmet": "^6.5.0",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-plugin-sitemap": "^6.13.1",
-    "gatsby-source-contentful": "^8.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
-    "lodash": "^4.17.21",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-helmet": "^6.1.0",
-    "reading-time": "^2.0.0-1"
-  },
-  "devDependencies": {
-    "contentful-import": "^8.3.2",
-    "gatsby-provision-contentful": "^0.0.5",
-    "gh-pages": "^5.0.0"
-  },
+  "version": "1.0.0",
+  "type": "module",
   "engines": {
-    "node": ">=18.0.0"
-  },
-  "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
-  "keywords": [
-    "gatsby",
-    "contentful",
-    "starter"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
+    "node": ">=22.9.0"
   },
   "scripts": {
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npx --yes serve@14 out",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@fontsource/fira-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@shikijs/rehype": "^4.5.0",
+    "contentful": "^11.12.10",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "reading-time": "^1.5.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "^4.5.0",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "contentful-migration": "^5.1.1",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3"
   }
 }
