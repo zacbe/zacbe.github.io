@@ -1,0 +1,44 @@
+.box {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.updated {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 12px 20px;
+}
+
+/* Each dt/dd pair is wrapped in a div (valid in a dl) and joins the parent grid. */
+.row {
+  display: contents;
+}
+
+.term {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--accent);
+}

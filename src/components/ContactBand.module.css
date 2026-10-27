@@ -1,0 +1,67 @@
+.band {
+  background: var(--ink);
+  color: #f2f3f1;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  padding-block: 88px;
+}
+
+.kicker {
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--dark-muted);
+}
+
+.prompt {
+  color: var(--mint);
+}
+
+.title {
+  max-width: 640px;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.primary {
+  background: var(--mint);
+  color: #06161b;
+  overflow-wrap: anywhere;
+}
+
+.primary:hover {
+  background: #8ae2cd;
+  color: #06161b;
+}
+
+.secondary {
+  border-color: #5a5f67;
+  color: #f2f3f1;
+}
+
+.secondary:hover {
+  border-color: #f2f3f1;
+  color: #fff;
+}
+
+.band :focus-visible {
+  outline-color: var(--mint);
+}

@@ -1,0 +1,10 @@
+.kicker {
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.prompt {
+  color: var(--accent);
+}

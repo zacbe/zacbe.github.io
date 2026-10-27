@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zacbé — TIL archive</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Fira+Mono:wght@400&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121417}a:hover{color:#0B6B52}
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #FAFAF9; color: #121417; font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+<header style="max-width: 1120px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="text-decoration: none; font-family: Menlo, 'Fira Mono', ui-monospace, monospace; font-size: 22px"><span style="color: #0B7A5C">&gt;</span> ZBē</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 16px; font-weight: 500">
+<a href="#top" aria-current="page" style="text-decoration: underline; text-decoration-color: #0B7A5C; text-decoration-thickness: 2px; text-underline-offset: 6px">TIL</a>
+<a href="#projects" style="text-decoration: none">Projects</a>
+<a href="#uses" style="text-decoration: none">Uses</a>
+<a href="#resume" style="display: inline-block; padding: 9px 18px; border-radius: 999px; border: 1.5px solid #121417; text-decoration: none">Resume</a>
+</nav>
+</header>
+<main id="top" style="max-width: 1120px; margin: 0 auto; padding: 56px 24px 96px">
+<p style="margin: 0 0 12px; font-family: Menlo, 'Fira Mono', monospace; font-size: 15px; color: #5A5F67"><span style="color: #0B7A5C">&gt;</span> ls ./til</p>
+<h1 style="margin: 0 0 12px; font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: -0.04em; line-height: 1">Today I learned</h1>
+<p style="margin: 0 0 40px; max-width: 620px; font-size: 19px; color: #3A3F47">Short notes on things I figured out while building — usually 2 minutes to read. [N] entries so far.</p>
+<div style="display: flex; flex-direction: column; gap: 16px; padding-bottom: 32px; border-bottom: 1px solid #D9DAD6">
+<label style="display: flex; flex-direction: column; gap: 6px; max-width: 520px; font-size: 14px; font-weight: 500">Search entries
+<input type="search" placeholder="e.g. indexes, retries, docker…" style="padding: 13px 16px; border: 1.5px solid #C9CCC8; border-radius: 999px; background: #FFFFFF; font: inherit; font-size: 16px; font-weight: 400">
+</label>
+<div role="group" aria-label="Filter by tag" style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 14px">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #121417; background: #121417; color: #FFFFFF; font: inherit; cursor: pointer">all</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #C9CCC8; background: #FFFFFF; color: #121417; font: inherit; cursor: pointer">[tag]</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #C9CCC8; background: #FFFFFF; color: #121417; font: inherit; cursor: pointer">[tag]</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #C9CCC8; background: #FFFFFF; color: #121417; font: inherit; cursor: pointer">[tag]</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #C9CCC8; background: #FFFFFF; color: #121417; font: inherit; cursor: pointer">[tag]</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #C9CCC8; background: #FFFFFF; color: #121417; font: inherit; cursor: pointer">[tag]</button>
+</div>
+</div>
+<section aria-labelledby="m1" style="padding-top: 40px">
+<h2 id="m1" style="margin: 0 0 8px; font-family: 'Fira Mono', monospace; font-size: 15px; font-weight: 400; color: #5A5F67">[Month YYYY]</h2>
+<ol style="margin: 0; padding: 0; list-style: none">
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span><span style="padding: 2px 10px; border-radius: 999px; background: #E7F3EF; color: #0B6B52">from [project]</span></span></a></li>
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span></span></a></li>
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span></span></a></li>
+</ol>
+</section>
+<section aria-labelledby="m2" style="padding-top: 40px">
+<h2 id="m2" style="margin: 0 0 8px; font-family: 'Fira Mono', monospace; font-size: 15px; font-weight: 400; color: #5A5F67">[Month YYYY]</h2>
+<ol style="margin: 0; padding: 0; list-style: none">
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span><span style="padding: 2px 10px; border-radius: 999px; background: #E7F3EF; color: #0B6B52">from [project]</span></span></a></li>
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span></span></a></li>
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span></span></a></li>
+<li style="border-bottom: 1px solid #E3E4E1"><a href="#entry" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 28px; padding: 20px 0; text-decoration: none"><time style="flex: 0 0 64px; font-family: 'Fira Mono', monospace; font-size: 14px; color: #5A5F67">[DD]</time><span style="flex: 1 1 360px"><span style="display: block; font-size: 20px; font-weight: 500">[What you learned, as a one-line title]</span><span style="display: block; color: #4A4F57">[One-sentence summary of the entry.]</span></span><span style="display: flex; gap: 8px; font-family: 'Fira Mono', monospace; font-size: 13px"><span style="padding: 2px 10px; border-radius: 999px; background: #EEEFEC">[tag]</span></span></a></li>
+</ol>
+</section>
+<div style="padding-top: 40px; display: flex; justify-content: center">
+<a href="#top" style="display: inline-block; padding: 12px 22px; border-radius: 999px; border: 1.5px solid #121417; text-decoration: none; font-weight: 500">Older entries</a>
+</div>
+</main>
+<footer style="background: #121417; color: #9AA09B">
+<div style="max-width: 1120px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<span>© [year] Zacbé</span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 20px"><a href="#top" style="color: #C9CCC8">TIL</a><a href="#projects" style="color: #C9CCC8">Projects</a><a href="#uses" style="color: #C9CCC8">Uses</a><a href="#resume" style="color: #C9CCC8">Resume</a></nav>
+</div>
+</footer>
+</div>
+</body>
+</html>

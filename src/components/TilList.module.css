@@ -1,0 +1,77 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--divider);
+}
+
+.item {
+  border-bottom: 1px solid var(--divider);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 28px;
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.date {
+  flex: 0 0 110px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.main {
+  flex: 1 1 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--fs-list-title);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.row:hover .title {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.summary {
+  color: var(--text-3);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Archive variant (/til): lighter rules inside month groups, day-only date column. */
+.archive {
+  border-top: 0;
+}
+
+.archive .item {
+  border-bottom-color: var(--border);
+}
+
+.archive .row {
+  gap: 4px 28px;
+}
+
+.archive .date {
+  flex-basis: 64px;
+}
+
+.archive .main {
+  gap: 0;
+}
