@@ -27,8 +27,8 @@
   --code-comment: #8a918c;
 
   /* type */
-  --font-sans: 'Space Grotesk', system-ui, sans-serif;
-  --font-mono: Menlo, 'Fira Mono', ui-monospace, monospace;
+  --font-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: Menlo, var(--font-fira-mono), ui-monospace, monospace;
   --fs-page-h1: clamp(40px, 6vw, 72px);
   --fs-section-h2: clamp(30px, 4vw, 44px);
   --fs-article-h1: clamp(34px, 5vw, 52px);
